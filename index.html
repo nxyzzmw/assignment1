@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+</head>
+<body>
+       <style>
+       body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    
+}
+
+#left-panel {
+    width: 10%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10%;
+}
+
+#left-panel ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#left-panel li {
+    margin-bottom: 10px;
+}
+
+#left-panel a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#left-panel a:hover {
+    background-color: #ddd;
+}
+
+#content {
+    flex: 1;
+    padding: 20px;
+}
+
+#content div {
+    display: none;
+}
+
+#content h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#content p {
+    color: #666;
+    line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+    #left-panel {
+        width: 20%;
+        height: auto;
+        left: 0;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    #content {
+        margin-left: 0;
+    }
+
+}
+
+    </style>
+    <script>
+        function showContent(contentId) {
+            var contentDivs = document.querySelectorAll('#content div');
+            for (var i = 0; i < contentDivs.length; i++) {
+                contentDivs[i].style.display = 'none';
+            }
+
+            var selectedDiv = document.getElementById(contentId);
+            selectedDiv.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div id="left-panel">
+        <ul>
+            <li><a href="#" onclick="showContent('home')">Home</a></li>
+            <li><a href="#" onclick="showContent('contact')">Contact</a></li>
+            <li><a href="#" onclick="showContent('information')">Information</a></li>
+            <li><a href="#" onclick="showContent('guide')">Guide</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <div id="home">
+            <h2>Home</h2>
+            <p>Welcome to the home page.</p>
+        </div>
+        <div id="contact">
+            <h2>Contact</h2>
+            <p>Contact information goes here.</p>
+        </div>
+        <div id="information">
+            <h2>Information</h2>
+            <p>Additional information is displayed here.</p>
+        </div>
+        <div id="guide">
+            <h2>Guide</h2>
+            <p>Guidance and instructions are shown in this section.</p>
+        </div>
+    </div>
+</body>
+</html>
